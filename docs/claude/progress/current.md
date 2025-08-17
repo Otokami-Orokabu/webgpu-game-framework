@@ -1,8 +1,8 @@
 # 現在の実装状況
 
-**最終更新**: 2025-08-16  
-**現在Phase**: 1 (未実装)  
-**進捗**: プロジェクト初期設定完了
+**最終更新**: 2025-08-17  
+**現在Phase**: 1 (実装開始前)  
+**進捗**: 基盤構築完了、GitHub Pages公開済み
 
 ## ✅ 完了済みタスク
 
@@ -26,10 +26,15 @@
 - [x] `index.html` メインページ実装
 - [x] `shared/styles.css` 共通スタイル作成
 
+### デプロイ
+- [x] GitHubリポジトリ作成
+- [x] GitHub Actions設定
+- [x] GitHub Pages公開
+- **公開URL**: https://otokami-orokabu.github.io/webgpu-game-framework/
+
 ## 🚧 現在のタスク
 
-**Phase 1: 基盤構築の実装**
-- Lesson 1-4の段階的実装
+**次回作業**: Lesson 1: 環境構築とフレームワーク基盤から開始
 
 ## 📋 次のタスク
 
