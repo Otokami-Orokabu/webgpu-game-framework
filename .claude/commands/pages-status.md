@@ -61,5 +61,5 @@ gh run watch
 
 ## 関連ドキュメント
 
-- [GitHub Pages セットアップガイド](../../docs/claude/deployment/github-pages-setup.md)
-- [GitHub Actions ワークフロー解説](../../docs/claude/deployment/github-actions-guide.md)
+- [GitHub Pages セットアップガイド](../../docs/github/pages-setup.md)
+- [GitHub Actions ワークフロー解説](../../docs/github/actions-workflow.md)
