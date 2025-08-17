@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    /* 言語とターゲット環境 */
+    "target": "ES2022",                      // 最新のJavaScript機能を使用
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // ブラウザAPIとES2022機能
+    "module": "ESNext",                      // ES Modules使用
+    "moduleResolution": "bundler",           // Viteとの互換性
+
+    /* 型チェック */
+    "strict": true,                          // 厳格な型チェック
+    "noImplicitAny": true,                   // 暗黙のany型を禁止
+    "strictNullChecks": true,                // null/undefinedの厳格チェック
+    "strictFunctionTypes": true,             // 関数型の厳格チェック
+    "strictBindCallApply": true,             // bind/call/applyの厳格チェック
+    "strictPropertyInitialization": true,    // プロパティ初期化の厳格チェック
+    "noImplicitThis": true,                  // 暗黙のthis型を禁止
+    "alwaysStrict": true,                    // "use strict"を常に出力
+
+    /* 追加チェック */
+    "noUnusedLocals": true,                  // 未使用のローカル変数を警告
+    "noUnusedParameters": true,              // 未使用のパラメータを警告
+    "noImplicitReturns": true,               // 暗黙のreturnを禁止
+    "noFallthroughCasesInSwitch": true,      // switch文のフォールスルーを禁止
+    "noUncheckedIndexedAccess": true,        // インデックスアクセスの安全性チェック
+
+    /* モジュール解決 */
+    "esModuleInterop": true,                 // CommonJSモジュールとの互換性
+    "allowSyntheticDefaultImports": true,    // default importの許可
+    "resolveJsonModule": true,               // JSONファイルのimport許可
+    "isolatedModules": true,                 // 単一ファイルトランスパイル対応
+
+    /* 出力設定 */
+    "skipLibCheck": true,                    // ライブラリの型定義チェックをスキップ
+    "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を厳格チェック
+
+    /* パスマッピング */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],                      // @/でsrc/にアクセス
+      "@core/*": ["src/core/*"],             // @core/でコアモジュールにアクセス
+      "@ecs/*": ["src/ecs/*"],               // @ecs/でECSモジュールにアクセス
+      "@components/*": ["src/components/*"],  // @components/でコンポーネントにアクセス
+      "@systems/*": ["src/systems/*"],        // @systems/でシステムにアクセス
+      "@graphics/*": ["src/graphics/*"],      // @graphics/でグラフィックスモジュールにアクセス
+      "@math/*": ["src/math/*"]              // @math/で数学ライブラリにアクセス
+    },
+
+    /* WebGPU型定義 */
+    "types": ["@webgpu/types", "vite/client"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "phases/**/*.ts",
+    "phases/**/*.tsx",
+    "shared/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}

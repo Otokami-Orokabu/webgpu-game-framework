@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebGPU Game Framework - 段階的に学ぶWebGPUとゲーム開発">
+  <title>WebGPU Game Framework</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <style>
+    /* インラインスタイル（後でstyles.cssに移動） */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .phase-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phase-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .phase-number {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .phase-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .phase-description {
+      color: #666;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .phase-lessons {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .status-available {
+      background: #10b981;
+      color: white;
+    }
+
+    .status-coming {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .browser-warning {
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+    .browser-warning.show {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 1rem;
+      }
+
+      .phase-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎮 WebGPU Game Framework</h1>
+      <p class="subtitle">段階的に学ぶWebGPUとゲーム開発</p>
+    </header>
+
+    <div id="browser-warning" class="browser-warning">
+      ⚠️ お使いのブラウザはWebGPUに対応していません。Chrome 113+、Edge 113+、またはSafari 17.5+をご利用ください。
+    </div>
+
+    <main>
+      <div class="phase-grid">
+        <!-- Phase 1 -->
+        <a href="./phases/phase1-foundation/" class="phase-card">
+          <div class="phase-number">1</div>
+          <h2 class="phase-title">基盤構築</h2>
+          <p class="phase-description">
+            WebGPUの基礎から始めて、レンダリングパイプライン、メッシュシステム、シェーダーシステムを構築します。
+          </p>
+          <div class="phase-lessons">Lesson 1-4</div>
+          <span class="status-badge status-coming">準備中</span>
+        </a>
+
+        <!-- Phase 2 -->
+        <a href="./phases/phase2-ecs/" class="phase-card">
+          <div class="phase-number">2</div>
+          <h2 class="phase-title">ECSアーキテクチャ</h2>
+          <p class="phase-description">
+            Entity Component Systemを実装し、ゲームオブジェクトの効率的な管理システムを構築します。
+          </p>
+          <div class="phase-lessons">Lesson 5-8</div>
+          <span class="status-badge status-coming">準備中</span>
+        </a>
+
+        <!-- Phase 3 -->
+        <a href="./phases/phase3-3d/" class="phase-card">
+          <div class="phase-number">3</div>
+          <h2 class="phase-title">3D機能とアニメーション</h2>
+          <p class="phase-description">
+            カメラシステム、アニメーション、glTFモデルローディングなど、3Dゲームに必要な機能を実装します。
+          </p>
+          <div class="phase-lessons">Lesson 9-12</div>
+          <span class="status-badge status-coming">準備中</span>
+        </a>
+
+        <!-- Phase 4 -->
+        <a href="./phases/phase4-game/" class="phase-card">
+          <div class="phase-number">4</div>
+          <h2 class="phase-title">ゲーム機能</h2>
+          <p class="phase-description">
+            物理演算、ライティング、入力システム、パーティクルなど、ゲーム開発に必要な機能を追加します。
+          </p>
+          <div class="phase-lessons">Lesson 13-16</div>
+          <span class="status-badge status-coming">準備中</span>
+        </a>
+
+        <!-- Phase 5 -->
+        <a href="./phases/phase5-optimization/" class="phase-card">
+          <div class="phase-number">5</div>
+          <h2 class="phase-title">最適化と応用</h2>
+          <p class="phase-description">
+            インスタンシング、GPU駆動レンダリングなどの最適化技術を学び、統合デモゲームを作成します。
+          </p>
+          <div class="phase-lessons">Lesson 17-18</div>
+          <span class="status-badge status-coming">準備中</span>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>WebGPU Game Framework v0.1.0 | MIT License</p>
+  </footer>
+
+  <script type="module">
+    // WebGPUサポートチェック
+    if (!navigator.gpu) {
+      document.getElementById('browser-warning').classList.add('show');
+    }
+
+    // ページ遷移アニメーション
+    document.querySelectorAll('.phase-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (card.querySelector('.status-coming')) {
+          e.preventDefault();
+          alert('このPhaseは現在準備中です。');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

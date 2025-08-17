@@ -1,0 +1,30 @@
+{
+  "name": "webgpu-game-framework",
+  "version": "0.1.0",
+  "description": "WebGPU APIを基盤とした汎用ゲームフレームワーク学習プロジェクト",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [
+    "webgpu",
+    "game-framework",
+    "ecs",
+    "typescript",
+    "learning"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.4.1",
+    "@webgpu/types": "^0.1.46",
+    "gh-pages": "^6.1.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {}
+}
