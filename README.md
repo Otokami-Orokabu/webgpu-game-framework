@@ -1,6 +1,8 @@
-# WebGPU学習プロジェクト
+# WebGPU Game Framework
 
-フレームワークを使わずにWebGPUを基礎から学ぶためのプロジェクトです。
+WebGPU APIを基盤とした汎用ゲームフレームワークの学習プロジェクトです。ECS（Entity Component System）アーキテクチャを採用し、段階的な学習を通じて実用的なフレームワークを構築します。
+
+🌐 **デモサイト**: https://otokami-orokabu.github.io/webgpu-game-framework/
 
 ## 🎯 特徴
 
@@ -19,8 +21,8 @@
 ### インストール
 ```bash
 # リポジトリのクローン
-git clone [repository-url]
-cd webgpu-learning
+git clone https://github.com/Otokami-Orokabu/webgpu-game-framework.git
+cd webgpu-game-framework
 
 # 依存関係のインストール
 npm install
@@ -29,34 +31,53 @@ npm install
 npm run dev
 ```
 
-ブラウザで http://localhost:5173 を開いてください。
+ブラウザで http://localhost:3000 を開いてください。
 
 ## 📚 学習内容
 
-### 基礎編
-- Lesson 1: WebGPU環境のセットアップ
-- Lesson 2: 画面のクリア
-- Lesson 3: 三角形の描画
-- Lesson 4: 四角形とインデックスバッファ
+### Phase 1: 基盤構築（Lesson 1-4）
+- 環境構築とフレームワーク基盤
+- レンダリングパイプライン
+- 基本図形とメッシュシステム
+- シェーダーシステム
 
-### 中級編
-- Lesson 5: 頂点カラー
-- Lesson 6: 2D変換
-- Lesson 7: 3D変換
-- Lesson 8: 立方体の描画
+### Phase 2: ECSアーキテクチャ（Lesson 5-8）
+- ECS基本実装
+- Transform Component
+- Rendering Components
+- System実装
 
-### 応用編
-- Lesson 9: アニメーション
-- Lesson 10-11: テクスチャマッピング
-- Lesson 12-13: ライティング
-- Lesson 14-17: 高度な技術
+### Phase 3: 3D機能とアニメーション（Lesson 9-12）
+- カメラシステム
+- アニメーションシステム
+- モデルローディング（glTF）
+- シーングラフ
+
+### Phase 4: ゲーム機能（Lesson 13-16）
+- 物理演算統合
+- ライティングシステム
+- 入力システム
+- オーディオ・パーティクル
+
+### Phase 5: 最適化と応用（Lesson 17-18）
+- インスタンシング、バッチング
+- 統合デモゲーム
 
 ## 📦 プロジェクト構造
 
 ```
 .
-├── lessons/          # 各レッスンのコード
-├── shared/           # 共通コンポーネント
+├── src/              # フレームワークコア
+│   ├── core/         # レンダラー、デバイス管理
+│   ├── ecs/          # Entity Component System
+│   ├── graphics/     # シェーダー、パイプライン
+│   └── math/         # 数学ライブラリ
+├── phases/           # 各Phase用ディレクトリ
+├── shared/           # 共通リソース（CSS、アセット）
+├── docs/             # ドキュメント
+│   ├── claude/       # Claude Code専用ドキュメント
+│   └── github/       # GitHub関連ドキュメント
+├── .claude/commands/ # Claude Codeコマンド
 ├── index.html        # メインページ
 └── vite.config.ts    # ビルド設定
 ```
@@ -69,6 +90,21 @@ npm run dev
 | `npm run build` | プロダクションビルド |
 | `npm run preview` | ビルド結果のプレビュー |
 | `npm run deploy` | GitHub Pagesへデプロイ |
+
+## 🤖 Claude Code コマンド
+
+このプロジェクトはClaude Codeでの開発に最適化されています。以下のコマンドが利用可能です：
+
+| コマンド | 説明 |
+|---------|------|
+| `/resume` | 作業再開手順を表示 |
+| `/status` | 現在の進捗状況を確認 |
+| `/build` | ビルド手順を表示 |
+| `/deploy` | デプロイ手順を表示 |
+| `/troubleshoot` | トラブルシューティングガイド |
+| `/pages-status` | GitHub Pagesの状態確認 |
+
+詳細は `.claude/commands/` ディレクトリ内のファイルを参照してください。
 
 ## 🌐 ブラウザサポート
 
