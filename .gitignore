@@ -43,6 +43,8 @@ coverage/
 
 # TypeScript
 *.tsbuildinfo
+src/**/*.js
+src/**/*.js.map
 
 # Vite
 vite.config.ts.timestamp-*

@@ -5,7 +5,6 @@ import { resolve } from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   // GitHub Pages用のベースパス設定
-  // リポジトリ名に合わせて変更してください
   base: process.env.NODE_ENV === 'production' ? '/webgpu-game-framework/' : '/',
 
   // パスエイリアス設定（tsconfig.jsonと同期）
@@ -38,24 +37,24 @@ export default defineConfig({
         // メインページ
         main: resolve(__dirname, 'index.html'),
         
-        // 各Phaseのエントリーポイント
-        phase1: resolve(__dirname, 'phases/phase1-foundation/index.html'),
-        phase2: resolve(__dirname, 'phases/phase2-ecs/index.html'),
-        phase3: resolve(__dirname, 'phases/phase3-3d/index.html'),
-        phase4: resolve(__dirname, 'phases/phase4-game/index.html'),
-        phase5: resolve(__dirname, 'phases/phase5-optimization/index.html'),
+        // 各Phaseのエントリーポイント（まだ作成されていないのでコメントアウト）
+        // phase1: resolve(__dirname, 'phases/phase1-foundation/index.html'),
+        // phase2: resolve(__dirname, 'phases/phase2-ecs/index.html'),
+        // phase3: resolve(__dirname, 'phases/phase3-3d/index.html'),
+        // phase4: resolve(__dirname, 'phases/phase4-game/index.html'),
+        // phase5: resolve(__dirname, 'phases/phase5-optimization/index.html'),
       },
       
       output: {
-        // チャンク分割設定
-        manualChunks: {
-          // フレームワークコアを別チャンクに
-          'framework': [
-            './src/core/index.ts',
-            './src/ecs/index.ts',
-            './src/math/index.ts',
-          ],
-        },
+        // チャンク分割設定（後で有効化）
+        // manualChunks: {
+        //   // フレームワークコアを別チャンクに
+        //   'framework': [
+        //     './src/core/index.ts',
+        //     './src/ecs/index.ts',
+        //     './src/math/index.ts',
+        //   ],
+        // },
       },
     },
     

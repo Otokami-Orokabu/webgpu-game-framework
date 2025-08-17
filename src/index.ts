@@ -3,11 +3,11 @@
  * メインエントリーポイント
  */
 
-// コアモジュールのエクスポート
-export * from './core';
-export * from './ecs';
-export * from './graphics';
-export * from './math';
+// コアモジュールのエクスポート（モジュール実装後に有効化）
+// export * from './core';
+// export * from './ecs';
+// export * from './graphics';
+// export * from './math';
 
 // バージョン情報
 export const VERSION = '0.1.0';

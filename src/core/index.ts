@@ -4,6 +4,6 @@
  */
 
 // 後で実装するエクスポート
-export { Renderer } from './Renderer';
-export { Device } from './Device';
-export { ResourceManager } from './ResourceManager';
+// export { Renderer } from './Renderer';
+// export { Device } from './Device';
+// export { ResourceManager } from './ResourceManager';
